@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "department_id": 1,
+    "service_id": "591.0",
+    "form_type_id": 1,
+    "form_name": "Combined Application Form (CAF)"
+  },
+  "categories": [],
+  "form_fields": [],
+  "page_masters": [],
+  "page_category_mappings": [],
+  "builder_fields": [],
+  "field_options": [],
+  "addmore_groups": [],
+  "addmore_columns": [],
+  "form_rules": []
+}

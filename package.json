@@ -1,0 +1,17 @@
+{
+  "name": "srs-bap-automation-kit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deps": "npm install",
+    "ready": "node scripts/check-readiness.mjs",
+    "run": "node scripts/run-workflow-srs-track.mjs --inputFile inputs/workflow-track-input.json",
+    "i": "npm run deps",
+    "c": "npm run ready",
+    "g": "npm run run"
+  },
+  "dependencies": {
+    "pdf-parse": "^2.4.5"
+  }
+}

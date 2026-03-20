@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bap.local/schemas/workflow-config-payload.schema.json",
+  "title": "Workflow Config Payload",
+  "type": "object",
+  "required": ["workflowRows"],
+  "properties": {
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "workflowRows": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "step",
+          "departmentId",
+          "serviceId",
+          "configVersion",
+          "status",
+          "roleId",
+          "actionAllowedJson",
+          "transitionMapJson",
+          "slaHours",
+          "slaBreachRequiresReason",
+          "formTypeId",
+          "currentRoleId",
+          "nextRoleId",
+          "forwardRoleId",
+          "revertRoleId",
+          "approverId",
+          "processingLevel",
+          "timeInHours",
+          "isDelayReasonRequired",
+          "canRevertToInvestor",
+          "canVerifyDocument",
+          "isOwnDepartment",
+          "permissableTabFormId",
+          "documentShowLast",
+          "processAnytime",
+          "showLiceneceList",
+          "showFieldEditableOrNot",
+          "formServiceJs",
+          "formActionController",
+          "subformActionName"
+        ],
+        "properties": {
+          "step": { "type": "integer", "minimum": 1 },
+          "departmentId": { "type": "integer", "minimum": 0 },
+          "serviceId": { "type": "string", "minLength": 1 },
+          "configVersion": { "type": "integer", "minimum": 1 },
+          "status": { "enum": ["DRAFT", "PUBLISHED", "INACTIVE", "ARCHIVED"] },
+          "roleId": { "type": "integer", "minimum": 0 },
+          "jurisdictionLevelId": { "type": ["integer", "null"] },
+          "assignmentStrategyId": { "type": ["integer", "null"] },
+          "actionMasterIds": {
+            "type": "array",
+            "items": { "type": "integer", "minimum": 1 }
+          },
+          "actionAllowedJson": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "enum": ["F", "FA", "A", "R", "RBI", "P", "H"] }
+          },
+          "assignmentRuleJson": { "type": ["object", "null"] },
+          "transitionMapJson": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": ["next_step", "next_roles"],
+              "properties": {
+                "next_step": { "type": ["integer", "null"] },
+                "next_roles": {
+                  "type": "array",
+                  "items": { "type": "integer", "minimum": 0 }
+                }
+              }
+            }
+          },
+          "slaHours": { "type": "integer", "minimum": 0 },
+          "slaBreachRequiresReason": { "type": "boolean" },
+          "nextAllocationRoleId": { "type": ["integer", "null"] },
+          "formTypeId": { "type": "integer", "minimum": 1 },
+          "currentRoleId": { "type": "integer", "minimum": 0 },
+          "nextRoleId": { "type": "integer", "minimum": 0 },
+          "forwardRoleId": { "type": "integer", "minimum": 0 },
+          "revertRoleId": { "type": "integer", "minimum": 0 },
+          "approverId": { "type": "integer", "minimum": 0 },
+          "processingLevel": { "enum": ["District", "State"] },
+          "timeInHours": { "type": "string" },
+          "isDelayReasonRequired": { "enum": ["Y", "N"] },
+          "canRevertToInvestor": { "enum": ["Y", "N"] },
+          "canVerifyDocument": { "enum": ["Y", "N"] },
+          "isOwnDepartment": { "enum": ["Y", "N"] },
+          "permissableTabFormId": { "type": "string" },
+          "documentShowLast": { "enum": ["Y", "N"] },
+          "processAnytime": { "enum": ["Y", "N"] },
+          "showLiceneceList": { "type": "string" },
+          "showFieldEditableOrNot": { "type": "string" },
+          "formServiceJs": { "type": "string" },
+          "formActionController": { "type": "string" },
+          "subformActionName": { "type": "string" }
+        }
+      }
+    }
+  }
+}

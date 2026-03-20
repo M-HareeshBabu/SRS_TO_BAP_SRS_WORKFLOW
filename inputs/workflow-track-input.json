@@ -1,0 +1,8 @@
+{
+  "taskName": "SRS to BAP SRS Template for workflow",
+  "srsTextPath": "C:\\Users\\DV115HK\\Downloads\\CAF_Full_SRS_v3_SRS.txt",
+  "srsPdfPath": "C:\\Users\\DV115HK\\Downloads\\CAF_Full_SRS_v3_SRS.pdf",
+  "formJsonPath": "",
+  "serviceId": "591.0",
+  "departmentId": 1
+}

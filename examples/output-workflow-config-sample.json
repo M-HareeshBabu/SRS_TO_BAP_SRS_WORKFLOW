@@ -1,0 +1,95 @@
+{
+  "warnings": [
+    "Role mapping for final approver is assumed as role_id=3; verify with master roles."
+  ],
+  "workflowRows": [
+    {
+      "step": 1,
+      "departmentId": 1,
+      "serviceId": "591.0",
+      "configVersion": 1,
+      "status": "DRAFT",
+      "roleId": 7,
+      "jurisdictionLevelId": 1,
+      "assignmentStrategyId": 1,
+      "actionMasterIds": [1, 2, 3],
+      "actionAllowedJson": ["F", "RBI"],
+      "assignmentRuleJson": {
+        "strategy": "ROLE",
+        "jurisdiction_level": "DISTRICT",
+        "role_id": 7
+      },
+      "transitionMapJson": {
+        "F": { "next_step": 2, "next_roles": [3] },
+        "RBI": { "next_step": 1, "next_roles": [] }
+      },
+      "slaHours": 72,
+      "slaBreachRequiresReason": true,
+      "nextAllocationRoleId": 3,
+      "formTypeId": 1,
+      "currentRoleId": 7,
+      "nextRoleId": 3,
+      "forwardRoleId": 3,
+      "revertRoleId": 0,
+      "approverId": 0,
+      "processingLevel": "District",
+      "timeInHours": "72",
+      "isDelayReasonRequired": "Y",
+      "canRevertToInvestor": "Y",
+      "canVerifyDocument": "N",
+      "isOwnDepartment": "N",
+      "permissableTabFormId": "",
+      "documentShowLast": "N",
+      "processAnytime": "N",
+      "showLiceneceList": "0",
+      "showFieldEditableOrNot": "0",
+      "formServiceJs": "",
+      "formActionController": "",
+      "subformActionName": ""
+    },
+    {
+      "step": 2,
+      "departmentId": 1,
+      "serviceId": "591.0",
+      "configVersion": 1,
+      "status": "DRAFT",
+      "roleId": 3,
+      "jurisdictionLevelId": 1,
+      "assignmentStrategyId": 1,
+      "actionMasterIds": [1, 4],
+      "actionAllowedJson": ["A", "R"],
+      "assignmentRuleJson": {
+        "strategy": "ROLE",
+        "jurisdiction_level": "DISTRICT",
+        "role_id": 3
+      },
+      "transitionMapJson": {
+        "A": { "next_step": 99, "next_roles": [] },
+        "R": { "next_step": 1, "next_roles": [7] }
+      },
+      "slaHours": 48,
+      "slaBreachRequiresReason": true,
+      "nextAllocationRoleId": null,
+      "formTypeId": 1,
+      "currentRoleId": 3,
+      "nextRoleId": 0,
+      "forwardRoleId": 0,
+      "revertRoleId": 7,
+      "approverId": 0,
+      "processingLevel": "District",
+      "timeInHours": "48",
+      "isDelayReasonRequired": "Y",
+      "canRevertToInvestor": "N",
+      "canVerifyDocument": "N",
+      "isOwnDepartment": "N",
+      "permissableTabFormId": "",
+      "documentShowLast": "N",
+      "processAnytime": "N",
+      "showLiceneceList": "0",
+      "showFieldEditableOrNot": "0",
+      "formServiceJs": "",
+      "formActionController": "",
+      "subformActionName": ""
+    }
+  ]
+}
